@@ -1,50 +1,34 @@
 /*
-  Capturar 2 números
-  e fazer as operações matemáticas
-  de soma, subtração, multiplicação,
-  divisão e resto da divisão.
+  Solicitar o nome do aluno e as 3 notas
+  do bimestre calcular a média daquele aluno.
 
-  E para cada operação, mostrar um alerta
-  com o resultado.
+  A média positiva deverá ser maior que 6
+
+  Se o aluno passou no bimestre, dar os
+  parabéns.
+
+  Se o aluno não passou no bimestre,
+  motivar o aluno a dar seu melhor na prova
+  de recuperação.
+
+  Em ambos os casos, mostre uma mensagem com o nome do aluno e a nota
 */
 
-let firstNumber = prompt('Digite o primeiro número')
-let secondNumber = prompt('Digite o segundo número')
+let student = prompt("Qual o nome do(a) aluno(a)?")
+let n1 = prompt("Qual a nota da primeira prova?")
+let n2 = prompt("Qual a nota da segunda prova?")
+let n3 = prompt("Qual a nota da terceira prova?")
 
-firstNumber = Number(firstNumber)
-secondNumber = Number(secondNumber)
+let average = (Number(n1) + Number(n2) + Number(n3)) / 3
 
-const sum = firstNumber + secondNumber
-const sub = firstNumber - secondNumber
-const multi = firstNumber * secondNumber
-const div = firstNumber / secondNumber
-const restDiv = firstNumber % secondNumber
+let result = average > 6
 
-alert('Soma: ' + sum)
-alert('Subtração: ' + sub)
-alert('Multiplicação: ' + multi)
-alert('Divisão: ' + div)
-alert('Resto da divisão: ' + restDiv)
+average = average.toFixed(2)
 
-
-/*
-  Solicite 2 números, faça a soma deles
-  e apresente o resultado final ao usuário
-*/
-
-// alert("Iremos somar 2 números")
-// let numberOne = prompt("Digite o primeiro número:")
-// let numberTwo = prompt("Digite o segundo número:")
-// let result = Number(numberOne) + Number(numberTwo)
-// alert("Resultado final: " + result)
-
-
-/*
-  Encontre a solução ao problema:
-
-  Pergunte o nome do usuário e escreva a mensagem:
-  "Olá, [nome do usuário]"
-
-*/
-// let nome = prompt("Qual o seu nome?")
-// alert("Olá, " + nome)
+if (result) {
+  alert("Parabéns, " + student + "! Sua média foi de: " + average)
+} else if (average < 3) {
+  alert("Reprovado")
+} else {
+  alert(student + " estude para sua prova de recuperação! Sua média foi de: " +  average)
+}
